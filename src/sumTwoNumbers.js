@@ -5,5 +5,8 @@
  * @returns {number}
  */
 module.exports.sumTwoNumbers = function sumTwoNumbers(firstNumber, secondNumber) {
-  throw new Error('Not implemented');
+  let a = parseFloat(String(firstNumber).replace(/\s/g, ''));
+  let b = parseFloat(String(secondNumber).replace(/\s/g, ''));
+
+  return a + b;
 };

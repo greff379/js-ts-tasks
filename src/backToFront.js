@@ -4,6 +4,16 @@
  * @param {number} symbolsCount
  * @returns {string}
  */
-module.exports.backToFront = function backToFront(str, symbolsCount) {
-  throw new Error('Not implemented');
-};
+function copyPasteSymbols(str, symbolsCount) {
+    if (typeof str !== 'string' || str.length === 0) {
+        return str;
+    }
+
+    if (typeof symbolsCount !== 'number' || symbolsCount <= 0) {
+        return str;
+    }
+    
+    const symbolsToCopy = str.slice(0, symbolsCount);
+    
+    return symbolsToCopy + str + symbolsToCopy;
+}
