@@ -5,15 +5,12 @@
  * @returns {string}
  */
 function copyPasteSymbols(str, symbolsCount) {
-    if (typeof str !== 'string' || str.length === 0) {
-        return str;
-    }
 
-    if (typeof symbolsCount !== 'number' || symbolsCount <= 0) {
-        return str;
-    }
-    
-    const symbolsToCopy = str.slice(0, symbolsCount);
-    
-    return symbolsToCopy + str + symbolsToCopy;
+    if (typeof str !== 'string') str = String(str);
+    symbolsCount = Number(symbolsCount) || 0;
+    if (symbolsCount < 0) symbolsCount = 0;
+    if (symbolsCount > str.length) symbolsCount = str.length;
+
+    const symbols = str.substring(0, symbolsCount);
+    return symbols + str + symbols;
 }
