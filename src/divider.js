@@ -6,15 +6,5 @@
  * @returns {number}
  */
 module.exports.divider = function divider(n, k) {
-  let wholePart = 0;
-  let temp = n;
-
-  while (temp >= k) {
-    temp = temp - k;
-    wholePart = wholePart + 1;
-  }
-
-  let remainder = temp;
-
-  return wholePart + ' ' + remainder;
+    return Math.floor(n / k) + " " + (n % k);
 };
